@@ -4,49 +4,49 @@
 Running 10s test @ http://127.0.0.1:8081/user
   4 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.83ms  338.34us   7.20ms   76.49%
-    Req/Sec    26.12k     1.81k   30.77k    71.50%
+    Latency     2.01ms    1.16ms  32.56ms   95.46%
+    Req/Sec    24.15k     3.21k   29.82k    87.25%
   Latency Distribution
-     50%    1.87ms
-     75%    2.01ms
-     90%    2.17ms
-     99%    2.64ms
-  1039916 requests in 10.01s, 155.70MB read
-  Socket errors: connect 0, read 50, write 0, timeout 0
-Requests/sec: 103910.75
-Transfer/sec:     15.56MB
+     50%    1.90ms
+     75%    2.10ms
+     90%    2.42ms
+     99%    5.49ms
+  961891 requests in 10.02s, 144.02MB read
+  Socket errors: connect 0, read 62, write 0, timeout 0
+Requests/sec:  96019.81
+Transfer/sec:     14.38MB
 ```
 ### actix
 ```text
 Running 10s test @ http://127.0.0.1:8082/user
   4 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.09ms  417.50us  15.87ms   87.97%
-    Req/Sec    23.56k     1.76k   32.39k    79.95%
+    Latency     2.14ms    0.89ms  23.70ms   91.81%
+    Req/Sec    22.68k     2.64k   32.48k    81.75%
   Latency Distribution
-     50%    2.12ms
-     75%    2.21ms
-     90%    2.31ms
-     99%    3.29ms
-  946816 requests in 10.10s, 141.76MB read
-  Socket errors: connect 0, read 51, write 0, timeout 0
-Requests/sec:  93706.21
-Transfer/sec:     14.03MB
+     50%    2.11ms
+     75%    2.26ms
+     90%    2.48ms
+     99%    5.16ms
+  904042 requests in 10.02s, 135.36MB read
+  Socket errors: connect 0, read 52, write 0, timeout 0
+Requests/sec:  90195.03
+Transfer/sec:     13.50MB
 ```
 ### net_http
 ```text
 Running 10s test @ http://127.0.0.1:8083/user
   4 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.72ms    2.91ms  48.90ms   88.37%
-    Req/Sec    21.33k     5.52k   35.08k    71.25%
+    Latency     2.64ms    2.59ms  48.55ms   88.04%
+    Req/Sec    20.58k     4.91k   36.07k    70.50%
   Latency Distribution
-     50%    1.75ms
-     75%    3.39ms
-     90%    6.07ms
-     99%   14.24ms
-  851511 requests in 10.05s, 127.49MB read
-  Socket errors: connect 0, read 60, write 0, timeout 0
-Requests/sec:  84717.36
-Transfer/sec:     12.68MB
+     50%    1.87ms
+     75%    3.27ms
+     90%    5.66ms
+     99%   11.58ms
+  821471 requests in 10.05s, 123.00MB read
+  Socket errors: connect 0, read 59, write 0, timeout 0
+Requests/sec:  81698.57
+Transfer/sec:     12.23MB
 ```
