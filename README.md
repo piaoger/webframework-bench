@@ -1,6 +1,8 @@
 ## web framework benchamark
 
-Benchmark to get the performance of http frameworks
+Benchmark to get the performance of http frameworks.
+
+They are also very simple examples to learn.
 
 ## benchmarks
 
