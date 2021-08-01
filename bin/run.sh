@@ -27,7 +27,7 @@ run_bench() {
 	echo "### ${casename}" >> ${BENCH_RESULT_FILE}
 	echo '```text' >> ${BENCH_RESULT_FILE}
 
-	if [ $OS == "Darwin" ]; then
+	if [ "${OS}" == "Darwin" ]; then
 		echo "wrk(darwin) ... "
 	    wrk --latency -t4 -c128 -d10s http://127.0.0.1:${port}/${method} >> ${BENCH_RESULT_FILE}
     else
