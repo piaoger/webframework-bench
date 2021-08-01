@@ -1,7 +1,6 @@
-use warp::Filter;
-
 use serde::Serialize;
 use std::convert::Infallible;
+use warp::Filter;
 
 #[derive(Serialize)]
 struct User<'a> {
