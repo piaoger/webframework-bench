@@ -28,9 +28,9 @@ async fn hello() -> impl IntoResponse {
 
 async fn user() -> impl IntoResponse {
     let u = User {
-        id: 1,
+        id: 3,
         user_name: "axum567890",
-        wechat: "mywechat",
+        wechat: "mywechat_03",
     };
     response::Json(u)
 }

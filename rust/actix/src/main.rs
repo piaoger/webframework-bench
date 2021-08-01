@@ -10,16 +10,16 @@ struct User<'a> {
 }
 
 #[get("/hello")]
-async fn hello(_info: web::Path<()>) -> impl Responder {
+async fn hello() -> impl Responder {
     HttpResponse::Ok().body("Hello, World!")
 }
 
 #[get("/user")]
-async fn user(_info: web::Path<()>) -> impl Responder {
+async fn user() -> impl Responder {
     let user = User {
-        id: 1,
+        id: 2,
         user_name: "actix67890",
-        wechat: "mywechat",
+        wechat: "mywechat_02",
     };
     HttpResponse::Ok().json(user)
 }

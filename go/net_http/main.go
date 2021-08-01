@@ -19,7 +19,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 
 func user(w http.ResponseWriter, r *http.Request) {
 	user := User{
-		Id:       1,
+		Id:       10,
 		Username: "net_http90",
 		Wechat:   "mywechat",
 	}

@@ -5,7 +5,7 @@ use std::convert::Infallible;
 
 #[derive(Serialize)]
 struct User<'a> {
-    id: i16,
+    id: i32,
     user_name: &'a str,
     wechat: &'a str,
 }
@@ -14,7 +14,7 @@ async fn query_userinfo() -> Result<impl warp::Reply, Infallible> {
     let user = User {
         id: 1,
         user_name: "warp567890",
-        wechat: "mywechat",
+        wechat: "mywechat_01",
     };
     Ok(warp::reply::json(&user))
 }
