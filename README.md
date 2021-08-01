@@ -34,7 +34,30 @@ GO:
 - Result
 
 ```text
-net/http(go) > actix(rust) > warp(rust)
+wrk --latency -t4 -c128 -d10s http://127.0.0.1:${port}/user
+mac: net/http(go) > actix(rust) > warp(rust)
+```
+
+### Memory
+
+
++-----------+------------------+---------------------+
+| framewrk  | real memory size | private memory size |
++-----------+------------------+---------------------+
+|  Actix    |  8.1  MB         |  6.6  MB            |
++-----------+------------------+---------------------+
+|  Auxm     |  6.5  MB         |  5.0  MB            |
++-----------+------------------+---------------------+
+|  Warp     |  5.2  MB         |  4.1  MB            |
++-----------+------------------+---------------------+
+|  net/http |  16.1 MB         |  10.2 MB            |
++-----------+------------------+---------------------+
+
+- Result
+
+```text
+wrk --latency -t4 -c128 -d10s http://127.0.0.1:${port}/user
+mac: net/http(go) > actix(rust)> axum(rust) > warp(rust)
 ```
 
 ### performance
@@ -48,10 +71,10 @@ apt get wrk
 ```
 
 ```txt
-wrk --latency -t4 -c200 -d8s http://127.0.0.1:8081/user
-wrk --latency -t4 -c200 -d8s http://127.0.0.1:8082/user
-wrk --latency -t4 -c200 -d8s http://127.0.0.1:8083/user
-wrk --latency -t4 -c200 -d8s http://127.0.0.1:8091/user
+wrk --latency -t4 -c128 -d10s http://127.0.0.1:8081/user
+wrk --latency -t4 -c128 -d10s http://127.0.0.1:8082/user
+wrk --latency -t4 -c128 -d10s http://127.0.0.1:8083/user
+wrk --latency -t4 -c128 -d10s http://127.0.0.1:8091/user
 ```
 
 
