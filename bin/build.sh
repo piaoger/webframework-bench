@@ -2,8 +2,6 @@
 OS=$(uname)
 THIS_FOLDER=$(cd ${0%/*} && echo $PWD)
 
-
-
 rm -rf ${THIS_FOLDER}/../bin/${OS}
 mkdir -p ${THIS_FOLDER}/../bin/${OS}
 

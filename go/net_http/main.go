@@ -21,7 +21,7 @@ func user(w http.ResponseWriter, r *http.Request) {
 	user := User{
 		Id:       10,
 		Username: "net_http90",
-		Wechat:   "mywechat",
+		Wechat:   "mywechat_10",
 	}
 	w.Header().Set("content-type", "application/json")
 	res, _ := json.Marshal(user)
@@ -30,7 +30,7 @@ func user(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fmt.Println("net/http(go) - http://localhost:8083")
+	fmt.Println("net/http(go) - http://localhost:8091")
 
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/user", user)
