@@ -18,7 +18,7 @@ async fn hello(_info: web::Path<()>) -> impl Responder {
 async fn user(_info: web::Path<()>) -> impl Responder {
     let user = User {
         id: 1,
-        user_name: "myname",
+        user_name: "actix67890",
         wechat: "mywechat",
     };
     HttpResponse::Ok().json(user)
@@ -26,7 +26,6 @@ async fn user(_info: web::Path<()>) -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-
     let port = "8082";
     let addr = format!("127.0.0.1:{}", port);
     println!("actix(rust) - http://{}", addr);

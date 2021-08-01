@@ -1,52 +1,65 @@
 ## BENCHMARK REPORT
-### warp
-```text
-Running 10s test @ http://127.0.0.1:8081/user
-  4 threads and 200 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.01ms    1.16ms  32.56ms   95.46%
-    Req/Sec    24.15k     3.21k   29.82k    87.25%
-  Latency Distribution
-     50%    1.90ms
-     75%    2.10ms
-     90%    2.42ms
-     99%    5.49ms
-  961891 requests in 10.02s, 144.02MB read
-  Socket errors: connect 0, read 62, write 0, timeout 0
-Requests/sec:  96019.81
-Transfer/sec:     14.38MB
-```
 ### actix
 ```text
 Running 10s test @ http://127.0.0.1:8082/user
-  4 threads and 200 connections
+  4 threads and 128 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.14ms    0.89ms  23.70ms   91.81%
-    Req/Sec    22.68k     2.64k   32.48k    81.75%
+    Latency     4.43ms    5.82ms  95.55ms   94.47%
+    Req/Sec     8.31k     1.81k   14.48k    74.87%
   Latency Distribution
-     50%    2.11ms
-     75%    2.26ms
-     90%    2.48ms
-     99%    5.16ms
-  904042 requests in 10.02s, 135.36MB read
-  Socket errors: connect 0, read 52, write 0, timeout 0
-Requests/sec:  90195.03
-Transfer/sec:     13.50MB
+     50%    3.36ms
+     75%    4.15ms
+     90%    6.22ms
+     99%   32.45ms
+  332649 requests in 10.10s, 51.08MB read
+Requests/sec:  32939.53
+Transfer/sec:      5.06MB
+```
+### axum
+```text
+Running 10s test @ http://127.0.0.1:8083/user
+  4 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.77ms    1.38ms  13.88ms   71.45%
+    Req/Sec     7.78k     1.10k   11.61k    73.50%
+  Latency Distribution
+     50%    3.62ms
+     75%    4.52ms
+     90%    5.56ms
+     99%    7.87ms
+  311138 requests in 10.06s, 47.77MB read
+Requests/sec:  30938.82
+Transfer/sec:      4.75MB
+```
+### warp
+```text
+Running 10s test @ http://127.0.0.1:8081/user
+  4 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.25ms    1.12ms   9.55ms   71.21%
+    Req/Sec     8.63k     1.37k   13.69k    77.50%
+  Latency Distribution
+     50%    3.12ms
+     75%    3.87ms
+     90%    4.68ms
+     99%    6.61ms
+  345471 requests in 10.06s, 53.04MB read
+Requests/sec:  34335.83
+Transfer/sec:      5.27MB
 ```
 ### net_http
 ```text
-Running 10s test @ http://127.0.0.1:8083/user
-  4 threads and 200 connections
+Running 10s test @ http://127.0.0.1:8091/user
+  4 threads and 128 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.64ms    2.59ms  48.55ms   88.04%
-    Req/Sec    20.58k     4.91k   36.07k    70.50%
+    Latency     5.65ms    6.84ms  96.21ms   88.94%
+    Req/Sec     6.91k     2.32k   14.34k    69.47%
   Latency Distribution
-     50%    1.87ms
-     75%    3.27ms
-     90%    5.66ms
-     99%   11.58ms
-  821471 requests in 10.05s, 123.00MB read
-  Socket errors: connect 0, read 59, write 0, timeout 0
-Requests/sec:  81698.57
-Transfer/sec:     12.23MB
+     50%    3.26ms
+     75%    6.99ms
+     90%   13.18ms
+     99%   33.59ms
+  275414 requests in 10.09s, 42.29MB read
+Requests/sec:  27287.19
+Transfer/sec:      4.19MB
 ```

@@ -11,17 +11,24 @@ we can run "strip" to get smaller binary size for rust apps.
 
 
 ```text
-actix-bench:
-   4.6 MB
-   3.3 MB
+RUST:
 
-warp-bench:
-   2.7 MB
-   2 MB
+   axum-bench:
+      4 MB
+      3 MB
 
-net-http-bench:
-   6.6MB
-   N/A
+   actix-bench:
+      4.6 MB
+      3.3 MB
+
+   warp-bench:
+      2.7 MB
+      2 MB
+GO:
+
+   net-http-bench:
+      6.6 MB
+      N/A
 ```
 
 - Result
@@ -44,6 +51,7 @@ apt get wrk
 wrk --latency -t4 -c200 -d8s http://127.0.0.1:8081/user
 wrk --latency -t4 -c200 -d8s http://127.0.0.1:8082/user
 wrk --latency -t4 -c200 -d8s http://127.0.0.1:8083/user
+wrk --latency -t4 -c200 -d8s http://127.0.0.1:8091/user
 ```
 
 
@@ -51,7 +59,7 @@ wrk --latency -t4 -c200 -d8s http://127.0.0.1:8083/user
 
 ```
 # macosx
-warp(rust) > actix(rust) > net/http(go)
+warp(rust) > actix(rust) > axum(rust) > net/http(go) ？
 ```
 
 - Todo

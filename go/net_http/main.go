@@ -20,7 +20,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 func user(w http.ResponseWriter, r *http.Request) {
 	user := User{
 		Id:       1,
-		Username: "myname",
+		Username: "net_http90",
 		Wechat:   "mywechat",
 	}
 	w.Header().Set("content-type", "application/json")
@@ -35,5 +35,5 @@ func main() {
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/user", user)
 
-	http.ListenAndServe(":8083", nil)
+	http.ListenAndServe(":8091", nil)
 }

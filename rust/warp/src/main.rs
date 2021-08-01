@@ -13,7 +13,7 @@ struct User<'a> {
 async fn query_userinfo() -> Result<impl warp::Reply, Infallible> {
     let user = User {
         id: 1,
-        user_name: "myname",
+        user_name: "warp567890",
         wechat: "mywechat",
     };
     Ok(warp::reply::json(&user))
@@ -39,7 +39,6 @@ fn apis() -> impl warp::Filter<Extract = impl warp::Reply, Error = warp::Rejecti
 
 #[tokio::main]
 async fn main() {
-
     let port = 8081;
     println!("warp(rust) - http://127.0.0.1:{}", port);
 

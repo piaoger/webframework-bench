@@ -328,6 +328,41 @@ dependencies = [
 ]
 
 [[package]]
+name = "axum"
+version = "0.1.0"
+dependencies = [
+ "axum 0.1.1",
+ "http",
+ "hyper",
+ "serde",
+ "tokio 1.8.1",
+ "tower",
+]
+
+[[package]]
+name = "axum"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3ecc2fad7de703d3117d448ca0e0bf45932510b323754b0a848221aed5647c7c"
+dependencies = [
+ "async-trait",
+ "bytes 1.0.1",
+ "futures-util",
+ "http",
+ "http-body",
+ "hyper",
+ "pin-project 1.0.7",
+ "regex",
+ "serde",
+ "serde_json",
+ "serde_urlencoded",
+ "tokio 1.8.1",
+ "tokio-util 0.6.7",
+ "tower",
+ "tower-http",
+]
+
+[[package]]
 name = "base-x"
 version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1880,6 +1915,44 @@ dependencies = [
 ]
 
 [[package]]
+name = "tower"
+version = "0.4.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f60422bc7fefa2f3ec70359b8ff1caff59d785877eb70595904605bcc412470f"
+dependencies = [
+ "futures-core",
+ "futures-util",
+ "pin-project 1.0.7",
+ "tokio 1.8.1",
+ "tokio-util 0.6.7",
+ "tower-layer",
+ "tower-service",
+ "tracing",
+]
+
+[[package]]
+name = "tower-http"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0b7b56efe69aa0ad2b5da6b942e57ea9f6fe683b7a314d4ff48662e2c8838de1"
+dependencies = [
+ "bytes 1.0.1",
+ "futures-core",
+ "futures-util",
+ "http",
+ "http-body",
+ "pin-project 1.0.7",
+ "tower-layer",
+ "tower-service",
+]
+
+[[package]]
+name = "tower-layer"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "343bc9466d3fe6b0f960ef45960509f84480bf4fd96f92901afe7ff3df9d3a62"
+
+[[package]]
 name = "tower-service"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1894,7 +1967,19 @@ dependencies = [
  "cfg-if 1.0.0",
  "log",
  "pin-project-lite 0.2.7",
+ "tracing-attributes",
  "tracing-core",
+]
+
+[[package]]
+name = "tracing-attributes"
+version = "0.1.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c42e6fa53307c8a17e4ccd4dc81cf5ec38db9209f59b222210375b54ee40d1e2"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

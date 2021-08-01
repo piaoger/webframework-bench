@@ -27,8 +27,13 @@ run_bench() {
 	echo "### ${casename}" >> ${BENCH_RESULT_FILE}
 	echo '```text' >> ${BENCH_RESULT_FILE}
 
-	wrk --latency -t4 -c200 -d10s http://127.0.0.1:${port}/${method} >> ${BENCH_RESULT_FILE}
-
+	if [ $OS == "Darwin" ]; then
+		echo "wrk(darwin) ... "
+	    wrk --latency -t4 -c128 -d10s http://127.0.0.1:${port}/${method} >> ${BENCH_RESULT_FILE}
+    else
+    	echo "wrk(linux) ... "
+		wrk --latency -t8 -c500 -d10s http://127.0.0.1:${port}/${method} >> ${BENCH_RESULT_FILE}
+    fi
 	echo '```' >> ${BENCH_RESULT_FILE}
 }
 
@@ -42,14 +47,24 @@ rm ${BENCH_RESULT_FILE}
 echo " ---- start services ----"
 run_service warp     8081 user
 run_service actix    8082 user
-run_service net_http 8083 user
+run_service axum     8083 user
+run_service net_http 8091 user
 
+#
 
 sleep 5
 
 echo " ---- run benchmarks ---- "
 echo "## BENCHMARK REPORT" >> ${BENCH_RESULT_FILE}
+run_bench actix    8082 user
+sleep 50
+
+run_bench axum     8083 user
+sleep 50
 
 run_bench warp     8081 user
-run_bench actix    8082 user
-run_bench net_http 8083 user
+sleep 50
+
+run_bench net_http 8091 user
+
+kill_processes
