@@ -1,0 +1,9 @@
+[package]
+name = "actix"
+version = "0.1.0"
+authors = ["piaoger"]
+edition = "2018"
+
+[dependencies]
+actix-web = "3.3"
+serde = { version = "1.0", features = ["derive"] }
