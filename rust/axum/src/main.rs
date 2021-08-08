@@ -1,8 +1,3 @@
-//! Example showing how to convert errors into responses and how one might do
-//! dependency injection using trait objects.
-
-#![allow(dead_code)]
-
 use axum::{
     extract::{Extension, Json, UrlParams},
     prelude::*,
@@ -21,7 +16,7 @@ struct User<'a> {
     wechat: &'a str,
 }
 
-async fn hello() -> impl IntoResponse {
+async fn hello() -> &'static str {
     "Hello, World!"
 }
 

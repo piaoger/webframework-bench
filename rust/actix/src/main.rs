@@ -1,7 +1,7 @@
 use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
-use serde::Serialize;
+use serde::{Serialize,Deserialize};
 
-#[derive(Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 struct User<'a> {
     id: i32,
     user_name: &'a str,

@@ -4,7 +4,18 @@ Benchmark to get the performance of http frameworks.
 
 They are also very simple examples to learn.
 
+
 ## benchmarks
+
+### frameworks
+
+actix-web: [github](https://github.com/actix/actix-web)
+
+axum: [github](https://github.com/tokio-rs/axum)
+
+warp: [github](https://github.com/seanmonstar/warp)
+
+net/http(go): [github](https://github.com/golang/go)
 
 ### binary size
 
@@ -12,32 +23,36 @@ we can run "strip" to get smaller binary size for rust apps.
 
 | framework | size(release) | strip   |
 | --------- | ------------- | ------- |
-| Actix     | 4.6  MB       | 3.3  MB |
-| Auxm      | 4  MB         | 3  MB   |
-| Warp      | 2.7  MB       | 2  MB   |
-| net/http  | 6.6 MB        | N/A     |
+| actix-web | 4.6  MB       | 3.3  MB |
+| auxm      | 4    MB       | 3  MB   |
+| warp      | 2.7  MB       | 2  MB   |
+| net/http  | 6.6  MB       | N/A     |
 
 - Result
 
+Smaller is better.
+
 ```text
-wrk --latency -t4 -c128 -d10s http://127.0.0.1:${port}/user
-mac: net/http(go) > actix(rust) > warp(rust)
+# macosx (file size)
+net/http(go) > actix(rust) > axum(rust) > warp(rust)
 ```
 
 ### memory
 
 | framework | real memory size | private memory size |
 | --------- | ---------------- | ------------------- |
-| Actix     | 8.1  MB          | 6.6  MB             |
-| Auxm      | 6.5  MB          | 5.0  MB             |
-| Warp      | 5.2  MB          | 4.1  MB             |
-| net/http  | 16.1 MB          | 10.2 MB             |
+| actix-web | 8.1  MB          | 6.5  MB             |
+| auxm      | 5.8  MB          | 4.2  MB             |
+| warp      | 5.1  MB          | 3.8  MB             |
+| net/http  | 15.6 MB          | 10.3 MB             |
 
 - Result
 
+Smaller is better.
+
 ```text
-wrk --latency -t4 -c128 -d10s http://127.0.0.1:${port}/user
-mac: net/http(go) > actix(rust)> axum(rust) > warp(rust)
+# macosx (memory size)
+net/http(go) > actix(rust) > axum(rust) >=< warp(rust)
 ```
 
 ### performance
@@ -56,17 +71,31 @@ wrk --latency -t4 -c128 -d10s http://127.0.0.1:8083/user
 wrk --latency -t4 -c128 -d10s http://127.0.0.1:8091/user
 ```
 
+| framework | Transfer/sec | Requests/sec |
+| --------- | ------------ | -------------|
+| actix-web | 14.70 MB     | 93962.68     |
+| auxm      | 15.94 MB     | 101911.63    |
+| warp      | 17.05 MB     | 109000.33    |
+| net/http  | 13.28 MB     | 84373.58     |
+
 - Result
 
+Larger requests/sec is better.
+
 ```
-# macosx
-warp(rust) > actix(rust) > axum(rust) > net/http(go) ？
+# macosx (requests/sec)
+warp(rust) >=< axum(rust) > actix(rust) > net/http(go)
 ```
 
-- Todo
+## Todo
 
-Add hyper(rust), deno, express(node.js) into benchmark
+- Add hyper(rust), deno, express(node.js) into benchmark
+
+- Add build time
+
 
 ## refs
 
-- ["Which programming language is fastest?"](https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html)
+- [Which programming language is fastest?](https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html)
+
+- [Techempower web framework benchmarks](https://www.techempower.com/benchmarks/)

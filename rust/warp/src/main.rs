@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Serialize,Deserialize};
 use std::convert::Infallible;
 use warp::Filter;
 
-#[derive(Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 struct User<'a> {
     id: i32,
     user_name: &'a str,
