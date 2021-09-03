@@ -1,8 +1,11 @@
 use axum::{
-    extract::{Extension, Json, UrlParams},
-    prelude::*,
+    //extract::{Extension, Json },
+    //prelude::*,
     response::IntoResponse,
     AddExtensionLayer,
+     handler::{get},
+    Router,
+    Json,
 };
 use http::{Response, StatusCode, Uri};
 use serde::{Deserialize, Serialize};
@@ -26,12 +29,12 @@ async fn user() -> impl IntoResponse {
         user_name: "axum567890",
         wechat: "mywechat_03",
     };
-    response::Json(u)
+     Json(u)
 }
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    let app = route("/user", get(user)).route("/hello", get(hello));
+    let app = Router::new().route("/hello", get(hello)).route("/user", get(user));
 
     // Run our application
     let addr = SocketAddr::from(([127, 0, 0, 1], 8083));

@@ -25,7 +25,8 @@ we can run "strip" to get smaller binary size for rust apps.
 | --------- | ------------- | ------- |
 | actix-web | 4.6  MB       | 3.3  MB |
 | auxm      | 4    MB       | 3  MB   |
-| warp      | 2.7  MB       | 2  MB   |
+| warp      | 2.8  MB       | 2.1  MB |
+| poem      | 2.9  MB       | 2.2  MB |
 | net/http  | 6.6  MB       | N/A     |
 
 - Result
@@ -43,6 +44,7 @@ net/http(go) > actix(rust) > axum(rust) > warp(rust)
 | --------- | ---------------- | ------------------- |
 | actix-web | 8.1  MB          | 6.5  MB             |
 | auxm      | 5.8  MB          | 4.2  MB             |
+| warp      | 5.1  MB          | 3.8  MB             |
 | warp      | 5.1  MB          | 3.8  MB             |
 | net/http  | 15.6 MB          | 10.3 MB             |
 
@@ -68,6 +70,7 @@ apt get wrk
 wrk --latency -t4 -c128 -d10s http://127.0.0.1:8081/user
 wrk --latency -t4 -c128 -d10s http://127.0.0.1:8082/user
 wrk --latency -t4 -c128 -d10s http://127.0.0.1:8083/user
+wrk --latency -t4 -c128 -d10s http://127.0.0.1:8084/user
 wrk --latency -t4 -c128 -d10s http://127.0.0.1:8091/user
 ```
 

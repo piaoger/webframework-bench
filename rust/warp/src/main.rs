@@ -18,14 +18,12 @@ async fn query_userinfo() -> Result<impl warp::Reply, Infallible> {
     Ok(warp::reply::json(&user))
 }
 
-/// filter: /hello
 fn hello() -> impl warp::Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
     warp::path!("hello")
         .and(warp::get())
         .map(|| "Hello, World!")
 }
 
-/// filter: /user
 fn user() -> impl warp::Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
     warp::path!("user")
         .and(warp::get())

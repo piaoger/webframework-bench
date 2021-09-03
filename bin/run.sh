@@ -48,6 +48,7 @@ echo " ---- start services ----"
 run_service warp     8081 user
 run_service actix    8082 user
 run_service axum     8083 user
+run_service poem     8084 user
 run_service net_http 8091 user
 
 #
@@ -56,13 +57,17 @@ sleep 5
 
 echo " ---- run benchmarks ---- "
 echo "## BENCHMARK REPORT" >> ${BENCH_RESULT_FILE}
+
+run_bench warp     8081 user
+sleep 50
+
 run_bench actix    8082 user
 sleep 50
 
 run_bench axum     8083 user
 sleep 50
 
-run_bench warp     8081 user
+run_bench poem     8084 user
 sleep 50
 
 run_bench net_http 8091 user

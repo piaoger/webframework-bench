@@ -3,4 +3,5 @@ members = [
 	"actix",
 	"warp",
 	"axum",
+	"poem",
 ]
