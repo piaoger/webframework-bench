@@ -1,5 +1,5 @@
+use poem::{get, handler, listener::TcpListener, web::Json, Route, Server};
 use serde::{Deserialize, Serialize};
-use poem::{handler, route, web::Path, route::get, Server,web::Json, Result};
 
 #[derive(Debug, Serialize, Deserialize)]
 struct User<'a> {
@@ -9,7 +9,7 @@ struct User<'a> {
 }
 
 #[handler]
-fn hello(Path(name): Path<String>) -> &'static str {
+fn hello() -> &'static str {
     "Hello, World!"
 }
 
@@ -25,9 +25,10 @@ fn user() -> Json<User<'static>> {
 
 #[tokio::main]
 async fn main() {
-    let app = route().at("/hello", get(hello)).at("/user", get(user));
+    let app = Route::new().at("/hello", get(hello)).at("/user", get(user));
 
     println!("poem(rust) - http://127.0.0.1:{}", 8084);
-    let server = Server::bind("127.0.0.1:8084").await.unwrap();
+    let listener = TcpListener::bind("127.0.0.1:8084");
+    let server = Server::new(listener).await.unwrap();
     server.run(app).await.unwrap();
 }

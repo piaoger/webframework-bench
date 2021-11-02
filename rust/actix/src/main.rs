@@ -1,5 +1,5 @@
-use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
-use serde::{Serialize,Deserialize};
+use actix_web::{get, App, HttpResponse, HttpServer, Responder};
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 struct User<'a> {

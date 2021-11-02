@@ -1,16 +1,6 @@
-use axum::{
-    //extract::{Extension, Json },
-    //prelude::*,
-    response::IntoResponse,
-    AddExtensionLayer,
-     handler::{get},
-    Router,
-    Json,
-};
-use http::{Response, StatusCode, Uri};
+use axum::{handler::get, response::IntoResponse, Json, Router};
 use serde::{Deserialize, Serialize};
-use std::{net::SocketAddr, sync::Arc};
-use tokio::net::TcpListener;
+use std::net::SocketAddr;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct User<'a> {
@@ -29,12 +19,14 @@ async fn user() -> impl IntoResponse {
         user_name: "axum567890",
         wechat: "mywechat_03",
     };
-     Json(u)
+    Json(u)
 }
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    let app = Router::new().route("/hello", get(hello)).route("/user", get(user));
+    let app = Router::new()
+        .route("/hello", get(hello))
+        .route("/user", get(user));
 
     // Run our application
     let addr = SocketAddr::from(([127, 0, 0, 1], 8083));

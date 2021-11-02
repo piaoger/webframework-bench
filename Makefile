@@ -36,7 +36,7 @@ export NODE_PATH := ${NODE_PATH}:${APP_BIN_NODEJS_DIR}/lib/node_modules
 # --------------------------------------------
 # golang
 # --------------------------------------------
-GOLANG_VERSION=1.15.5
+GOLANG_VERSION=1.15.15
 GOLANG_ROOT_NAME := "unknown"
 ifeq (${OS}, Linux)
 	GOLANG_ROOT_NAME := go${GOLANG_VERSION}.linux-amd64

@@ -15,6 +15,8 @@ axum: [github](https://github.com/tokio-rs/axum)
 
 warp: [github](https://github.com/seanmonstar/warp)
 
+poem: [github](https://hub.fastgit.org/poem-web/poem)
+
 net/http(go): [github](https://github.com/golang/go)
 
 ### binary size
