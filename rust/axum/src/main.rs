@@ -1,4 +1,4 @@
-use axum::{handler::get, response::IntoResponse, Json, Router};
+use axum::{routing::get, response::IntoResponse, Json, Router};
 use serde::{Deserialize, Serialize};
 use std::net::SocketAddr;
 

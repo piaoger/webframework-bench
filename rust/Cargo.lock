@@ -383,7 +383,7 @@ dependencies = [
 name = "axum"
 version = "0.1.0"
 dependencies = [
- "axum 0.2.8",
+ "axum 0.3.0",
  "http",
  "hyper",
  "serde",
@@ -393,9 +393,9 @@ dependencies = [
 
 [[package]]
 name = "axum"
-version = "0.2.8"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8f08f95a202e827209db1491047aa57c18c8adb4c5efcfcfd4a2da4838ee3a72"
+checksum = "49c3f630b925c7a85089ff794fdce495c88c80d38710f31eb9817c8399fd77ce"
 dependencies = [
  "async-trait",
  "bitflags",
@@ -404,8 +404,10 @@ dependencies = [
  "http",
  "http-body",
  "hyper",
+ "matchit",
+ "mime",
+ "percent-encoding",
  "pin-project-lite 0.2.7",
- "regex",
  "serde",
  "serde_json",
  "serde_urlencoded",
@@ -1170,6 +1172,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a3e378b66a060d48947b590737b30a1be76706c8dd7b8ba0f2fe3989c68a853f"
 
 [[package]]
+name = "matchit"
+version = "0.4.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "58b6f41fdfbec185dd3dff58b51e323f5bc61692c0de38419a957b0dcfccca3c"
+
+[[package]]
 name = "memchr"
 version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1466,16 +1474,16 @@ checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 name = "poem"
 version = "0.1.0"
 dependencies = [
- "poem 1.0.17",
+ "poem 1.0.19",
  "serde",
  "tokio 1.13.0",
 ]
 
 [[package]]
 name = "poem"
-version = "1.0.17"
+version = "1.0.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e757c99143544bc123b8631b41f3cfff1ff477d88733ead1a649ec8e64fa6420"
+checksum = "8299eff8781b479cea46809547a4250d8a74e78619c92bfce1b26bc1994a11f8"
 dependencies = [
  "askama",
  "async-trait",
@@ -1506,9 +1514,9 @@ dependencies = [
 
 [[package]]
 name = "poem-derive"
-version = "1.0.3"
+version = "1.0.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c3650060e471fc11fa9269fafcac0dc75810c98ce0ed2b035d4cbb89abb08b4"
+checksum = "525049048ca277139a74225a3c63e4fd54e00df475b09f39ac9422e3202e86aa"
 dependencies = [
  "darling",
  "proc-macro-crate",

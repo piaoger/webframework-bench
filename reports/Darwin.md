@@ -1,65 +1,81 @@
 ## BENCHMARK REPORT
+### warp
+```text
+Running 10s test @ http://127.0.0.1:8081/user
+  4 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.15ms  345.70us  11.29ms   77.69%
+    Req/Sec    24.84k     2.19k   38.07k    78.00%
+  Latency Distribution
+     50%    1.15ms
+     75%    1.28ms
+     90%    1.50ms
+     99%    2.26ms
+  989473 requests in 10.02s, 154.76MB read
+Requests/sec:  98790.95
+Transfer/sec:     15.45MB
+```
 ### actix
 ```text
 Running 10s test @ http://127.0.0.1:8082/user
   4 threads and 128 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.27ms  492.44us  12.81ms   86.65%
-    Req/Sec    23.63k     2.91k   33.61k    72.50%
+    Latency     1.38ms    1.54ms  53.98ms   95.52%
+    Req/Sec    23.83k     4.83k   45.99k    71.25%
   Latency Distribution
-     50%    1.25ms
-     75%    1.39ms
-     90%    1.58ms
-     99%    3.36ms
-  940897 requests in 10.01s, 147.16MB read
-Requests/sec:  93962.68
-Transfer/sec:     14.70MB
+     50%    1.19ms
+     75%    1.38ms
+     90%    1.86ms
+     99%    6.12ms
+  949448 requests in 10.02s, 148.50MB read
+Requests/sec:  94774.51
+Transfer/sec:     14.82MB
 ```
 ### axum
 ```text
 Running 10s test @ http://127.0.0.1:8083/user
   4 threads and 128 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.17ms  345.80us   6.41ms   77.70%
-    Req/Sec    25.61k     2.48k   31.42k    75.50%
+    Latency     1.34ms    1.23ms  38.24ms   96.32%
+    Req/Sec    23.16k     3.95k   40.24k    76.25%
   Latency Distribution
-     50%    1.14ms
-     75%    1.31ms
-     90%    1.55ms
-     99%    2.38ms
-  1029665 requests in 10.10s, 161.04MB read
-Requests/sec: 101911.63
-Transfer/sec:     15.94MB
+     50%    1.19ms
+     75%    1.40ms
+     90%    1.85ms
+     99%    5.04ms
+  922803 requests in 10.04s, 144.33MB read
+Requests/sec:  91944.52
+Transfer/sec:     14.38MB
 ```
-### warp
+### poem
 ```text
-Running 10s test @ http://127.0.0.1:8081/user
+Running 10s test @ http://127.0.0.1:8084/user
   4 threads and 128 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.12ms  255.75us  10.53ms   86.79%
-    Req/Sec    27.59k     2.73k   77.54k    98.50%
+    Latency     1.22ms  518.52us  19.03ms   79.83%
+    Req/Sec    23.83k     2.81k   34.70k    74.75%
   Latency Distribution
-     50%    1.14ms
-     75%    1.22ms
-     90%    1.30ms
-     99%    1.53ms
-  1100979 requests in 10.10s, 172.20MB read
-Requests/sec: 109000.33
-Transfer/sec:     17.05MB
+     50%    1.16ms
+     75%    1.38ms
+     90%    1.77ms
+     99%    3.03ms
+  948738 requests in 10.02s, 148.39MB read
+Requests/sec:  94710.41
+Transfer/sec:     14.81MB
 ```
 ### net_http
 ```text
 Running 10s test @ http://127.0.0.1:8091/user
   4 threads and 128 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.80ms    2.00ms  26.84ms   88.32%
-    Req/Sec    21.28k     6.25k   35.87k    69.75%
+    Latency     1.96ms    2.48ms  47.20ms   88.73%
+    Req/Sec    20.62k     7.42k   36.78k    64.25%
   Latency Distribution
-     50%    1.12ms
-     75%    2.18ms
-     90%    4.15ms
-     99%   10.23ms
-  850223 requests in 10.08s, 133.79MB read
-Requests/sec:  84373.58
-Transfer/sec:     13.28MB
+     50%    1.06ms
+     75%    2.43ms
+     90%    4.74ms
+     99%   10.84ms
+  824123 requests in 10.07s, 129.68MB read
+Requests/sec:  81873.23
+Transfer/sec:     12.88MB
 ```
