@@ -47,7 +47,7 @@ net/http(go) > actix(rust) > axum(rust) > warp(rust)
 | actix-web | 8.1  MB          | 6.5  MB             |
 | auxm      | 5.8  MB          | 4.2  MB             |
 | warp      | 5.1  MB          | 3.8  MB             |
-| warp      | 5.1  MB          | 3.8  MB             |
+| poem      | 5.1  MB          | 3.8  MB             |
 | net/http  | 15.6 MB          | 10.3 MB             |
 
 - Result
