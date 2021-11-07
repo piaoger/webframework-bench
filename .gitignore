@@ -7,3 +7,8 @@ rust/*/Cargo.lock
 # Go
 go/net_http/net_http
 
+
+# build artifacts
+bin/Linux
+bin/Darwin
+
