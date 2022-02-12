@@ -65,7 +65,9 @@ net/http(go) > actix(rust) > axum(rust) >=< warp(rust)
 
 ```txt
 brew install wrk
-apt get wrk
+apt get wrk 
+
+# no wrk package in ubuntu 20.14, have to build myself or use rewrk instead
 ```
 
 ```txt
