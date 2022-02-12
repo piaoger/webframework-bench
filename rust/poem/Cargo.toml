@@ -6,5 +6,5 @@ edition = "2018"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
-poem = "1.0"
+poem = "1.2"
 serde = { version = "1.0", features = ["derive"] }

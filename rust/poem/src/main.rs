@@ -29,6 +29,6 @@ async fn main() {
 
     println!("poem(rust) - http://127.0.0.1:{}", 8084);
     let listener = TcpListener::bind("127.0.0.1:8084");
-    let server = Server::new(listener).await.unwrap();
+    let server = Server::new(listener);
     server.run(app).await.unwrap();
 }
