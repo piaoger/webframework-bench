@@ -26,7 +26,7 @@ we can run "strip" to get smaller binary size for rust apps.
 | framework | size(release) | strip   |
 | --------- | ------------- | ------- |
 | actix-web | 4.6  MB       | 3.3  MB |
-| auxm      | 4    MB       | 3  MB   |
+| axum      | 4    MB       | 3  MB   |
 | warp      | 2.8  MB       | 2.1  MB |
 | poem      | 2.9  MB       | 2.2  MB |
 | net/http  | 6.6  MB       | N/A     |
@@ -45,7 +45,7 @@ net/http(go) > actix(rust) > axum(rust) > warp(rust)
 | framework | real memory size | private memory size |
 | --------- | ---------------- | ------------------- |
 | actix-web | 8.1  MB          | 6.5  MB             |
-| auxm      | 5.8  MB          | 4.2  MB             |
+| axum      | 5.8  MB          | 4.2  MB             |
 | warp      | 5.1  MB          | 3.8  MB             |
 | poem      | 5.1  MB          | 3.8  MB             |
 | net/http  | 15.6 MB          | 10.3 MB             |
@@ -81,7 +81,7 @@ wrk --latency -t4 -c128 -d10s http://127.0.0.1:8091/user
 | framework | Transfer/sec | Requests/sec |
 | --------- | ------------ | -------------|
 | actix-web | 14.70 MB     | 93962.68     |
-| auxm      | 15.94 MB     | 101911.63    |
+| axum      | 15.94 MB     | 101911.63    |
 | warp      | 17.05 MB     | 109000.33    |
 | net/http  | 13.28 MB     | 84373.58     |
 
